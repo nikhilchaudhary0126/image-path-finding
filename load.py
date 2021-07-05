@@ -1,3 +1,4 @@
+import cv2
 from PIL import Image
 from pixel import Pixel
 import numpy as np
@@ -48,3 +49,17 @@ def loadPixels(filename):
         if (x + 1, y + 1) in landPixels:
             landPixels[x, y].addNeighbor(landPixels[x + 1, y + 1], 1)
     return landPixels, data
+
+
+def showImage(data, x, y):
+    """
+    Shows OpevCV image of a numpy array
+    :param data: numpy array
+    :param x:   xCoordinate
+    :param y:   yCoordinate
+    :return: None
+    """
+    data[x, y] = [191, 255, 0]  # Update numpy pixel
+    RGB_img = cv2.cvtColor(data, cv2.COLOR_BGR2RGB)  # Covert to RGB
+    cv2.imshow('image', RGB_img)
+    cv2.waitKey(1)
