@@ -9,7 +9,7 @@ TERRAIN = {
 }
 
 
-def loadPixels(filename):
+def loadPixels(filename: str) -> (dict, np.ndarray):
     """
     Create a dictionary of Pixel nodes and returns
 
@@ -51,7 +51,7 @@ def loadPixels(filename):
     return landPixels, data
 
 
-def showImage(data, x, y):
+def showImage(data: np.ndarray, x: int, y: int) -> None:
     """
     Shows OpevCV image of a numpy array
     :param data: numpy array
