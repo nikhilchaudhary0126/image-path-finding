@@ -10,8 +10,9 @@ language: python3
 from collections import defaultdict
 from queue import PriorityQueue
 from math import sqrt, pow
-from load import *
-from pixel import *
+from classes.PixelPriority import PixelPriority
+from scripts.load import *
+from classes.Pixel import *
 
 
 def st(imagleFile: str, algorithm: str) -> None:
@@ -134,7 +135,7 @@ def ucs(st: Pixel, end: Pixel, data: np.ndarray):
     return path
 
 
-def astar(st:Pixel, end:Pixel, data: np.ndarray):
+def astar(st: Pixel, end: Pixel, data: np.ndarray):
     """
     Compute the path through the graph from st to end vertex whose sum of edge weights is minimized
     :param startKey:        start pixel point key
@@ -177,4 +178,4 @@ def astar(st:Pixel, end:Pixel, data: np.ndarray):
 
 
 if __name__ == '__main__':
-    st("terrain.png", "astar")
+    st("terrain.png", "dfs")

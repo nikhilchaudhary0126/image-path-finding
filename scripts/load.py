@@ -1,6 +1,6 @@
 import cv2
 from PIL import Image
-from pixel import Pixel
+from classes.Pixel import Pixel
 import numpy as np
 
 TERRAIN = {
